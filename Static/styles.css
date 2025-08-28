@@ -1,0 +1,376 @@
+/* Custom Styles for Stock Analysis App */
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --success-color: #27ae60;
+    --danger-color: #e74c3c;
+    --warning-color: #f39c12;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-fluid {
+    padding: 20px;
+}
+
+/* Header Styles */
+header h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: white !important;
+}
+
+header p {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Card Enhancements */
+.card {
+    border: none;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+    border: none;
+}
+
+/* Form Enhancements */
+.form-control {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Button Enhancements */
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    border: none;
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    border: none;
+}
+
+.btn-success:hover {
+    background: linear-gradient(45deg, #229954, #27ae60);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+}
+
+/* Table Enhancements */
+.table {
+    margin-bottom: 0;
+}
+
+/* Fixed height table container with scrolling */
+.table-responsive {
+    max-height: 1200px;
+    overflow-y: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+/* Sticky header */
+.table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #212529 !important;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.table th:hover {
+    background-color: rgba(52, 144, 220, 0.1);
+    color: var(--secondary-color);
+}
+
+.table th.sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.sort-indicator {
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.sort-indicator i {
+    transition: all 0.2s ease;
+}
+
+/* Custom scrollbar styling */
+.table-responsive::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+.table td {
+    vertical-align: middle;
+    padding: 1rem 1.25rem;
+    overflow: visible;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(52, 144, 220, 0.1);
+    /* Remove scale transform to prevent overflow issues */
+    transition: background-color 0.2s ease;
+    z-index: 1;
+    position: relative;
+}
+
+/* Badge Styles */
+.badge {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-stronger {
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    color: white;
+    box-shadow: 0 2px 10px rgba(39, 174, 96, 0.3);
+}
+
+.badge-weaker {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+    box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
+}
+
+.badge-neutral {
+    background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+    color: white;
+}
+
+/* Symbol Badge */
+.symbol-badge {
+    background: linear-gradient(45deg, var(--primary-color), #34495e);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 0.25rem;
+    position: relative;
+    left: 0;
+    z-index: 2;
+    overflow: visible;
+}
+
+.benchmark-symbol {
+    background: linear-gradient(45deg, #f39c12, #e67e22);
+}
+
+/* VL Ratio Display */
+.vl-ratio {
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+/* Price Change Display */
+.price-change {
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.price-change.positive {
+    color: var(--success-color);
+}
+
+.price-change.negative {
+    color: var(--danger-color);
+}
+
+.price-change.neutral {
+    color: var(--warning-color);
+}
+
+/* Price Display */
+.price-display {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: var(--success-color);
+}
+
+/* Volume Display */
+.volume-display {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--info-color);
+}
+
+/* Loading Animation */
+.spinner-border {
+    animation: spinner-grow 1.5s linear infinite;
+}
+
+@keyframes spinner-grow {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Alert Enhancements */
+.alert {
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.alert-danger {
+    background: linear-gradient(45deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.1));
+    border-left: 4px solid var(--danger-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 10px;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .table-responsive {
+        font-size: 0.9rem;
+    }
+
+    .symbol-badge {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Badge Container for Centering */
+.badge-container {
+    display: inline-block;
+    text-align: center;
+}
+
+/* Comparison Ratio Display */
+.comparison-ratio {
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+}
+
+/* No Compare Line */
+.no-compare-line {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+}
+
+/* Benchmark Row Highlighting */
+.benchmark-row {
+    background: linear-gradient(45deg, rgba(243, 156, 18, 0.1), rgba(230, 126, 34, 0.1));
+    border-left: 4px solid var(--warning-color);
+}
